@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{%static 'vars/style.css' %}">
+  <link rel="stylesheet" href="{%static 'login/style.css' %}">
+  
+  
+  <style>
+   a,
+   button,
+   input,
+   select,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+       border: none;
+       text-decoration: none;
+       background: none;
+   
+       -webkit-font-smoothing: antialiased;
+   }
+   
+   menu, ol, ul {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+   }
+   </style>
+  <title>Document</title>
+</head>
+<body>
+  <div class="frame-8">
+    <div class="logo">Rechef Dev</div>
+  </div>
+  <div class="login">
+    <div class="login-page">
+      <div class="frame-35">
+        <div class="hey-welcome-back">
+          Hey,
+          <br />
+          Welcome
+          <br />
+          Back
+        </div>
+        <div class="frame-34">
+          <div class="frame-31">
+            <div class="frame-30">
+              <div class="frame-29">
+                <div class="frame-28">
+                  <div class="frame-26">
+                    <div class="group-82">
+                      <div class="rectangle-7"></div>
+                      <div class="frame-25">
+                        <img class="mail-02" src="mail-020.svg" />
+                        <input type="email" name="email" placeholder="Enter your Email">
+                      </div>
+                    </div>
+                    <div class="group-81">
+                      <div class="rectangle-8"></div>
+                      <img class="view" src="view0.svg" />
+                      <div class="frame-252">
+                        <img class="lock" src="lock0.svg" />
+                        <input type="password" name="password" placeholder="Enter your Password"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="forgot-password">Forgot Password?</div>
+                </div>
+              
+                <div class="login-button-container">
+                  <a href="{% url 'home' %}"><button class="button login2">Login</button></a>
+                </div>
+
+              </div>
+              <p class="p2">or continue with</p>
+
+              <div class="google-button-container">
+                  <a href="">  
+                    <button class="button google" onclick="">
+                      <img class="vector" src="vector0.svg" />
+                      Google
+                    </button>
+                  </a>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="frame-33">
+            <div class="don-t-have-an-account">Don’t have an account?</div>
+            <a href="../SignUp/index.html"><div class="sign-up">Sign up</div></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  function detectDevice(){
+    if(window.innerWidth <= 768){
+      console.log("Mobile device detected");
+    }else{
+      console.log("Desktop/Laptop device detected");
+    }
+  }
+
+  detectDevice();
+  window.addEventListener('resize', detectDevice);
+</script>
+
+</html>

@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{%static 'splash/vars.css' %}">
+  <link rel="stylesheet" href="{%static 'splash/style.css' %}">
+  <style>
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      background: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    menu, ol, ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body onload="realtimeClock()">
+  <div class="splash">
+    <div class="startup-screen">
+      <div class="buttons-container">
+        <a href="../SignUp/index.html"><button class="button sign-up">Sign-Up</button></a>
+        <a href="{% url 'login' %}"><button class="button login">Login</button></a>
+      </div>
+      </div>
+      <div class="frame-11">
+        <div class="welcome-to-re-chef">Welcome to ReChef!</div>
+        <div class="where-inspiration-meets-ingredients">
+          Where Inspiration Meets Ingredients!
+        </div>
+      </div>
+      <div class="frame-8">
+        <div class="logo">Rechef Dev</div>
+      </div>
+      <div class="carousel">
+        <div class="rectangle-15"></div>
+        <img class="_6620564-5" src="{%static 'media/splash/_6620564-50.png' %}" />
+        <img class="_6620564-2" src="{{ MEDIA_URL }}_6620564-20.png" />
+        <img class="_6620564-52" src="{{ MEDIA_URL }}_6620564-51.png" />
+        <img class="_6620564-3" src="{{ MEDIA_URL }}_6620564-30.png" />
+    </div>
+  </div>
+  <script>
+    function realtimeClock() {
+      var rtClock = new Date();
+      var hours = rtClock.getHours();
+      var minutes = rtClock.getMinutes();
+      var seconds = rtClock.getSeconds();
+
+      var amPm = (hours < 12) ? "AM" : "PM";
+      hours = (hours > 12) ? hours - 12 : hours;
+
+      hours = ("0" + hours).slice(-2);
+      minutes = ("0" + minutes).slice(-2);
+      seconds = ("0" + seconds).slice(-2);
+
+      document.getElementById('clock').innerHTML = hours + " : " + minutes + " : " + seconds + " " + amPm;
+      var t = setTimeout(realtimeClock, 500);
+    }
+  </script>
+</body>
+</html>
