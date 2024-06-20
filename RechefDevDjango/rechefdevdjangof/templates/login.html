@@ -5,119 +5,146 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{%static 'vars/style.css' %}">
-  <link rel="stylesheet" href="{%static 'login/style.css' %}">
-  
-  
+  <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
   <style>
-   a,
-   button,
-   input,
-   select,
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   * {
-       box-sizing: border-box;
-       margin: 0;
-       padding: 0;
-       border: none;
-       text-decoration: none;
-       background: none;
-   
-       -webkit-font-smoothing: antialiased;
-   }
-   
-   menu, ol, ul {
-       list-style-type: none;
-       margin: 0;
-       padding: 0;
-   }
-   </style>
-  <title>Document</title>
+    html, body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+      
+      .logo {
+        font-family: "Lufga-SemiBold", sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+        color: #ff0000;
+      }
+      
+      .card {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      
+      .card-body {
+        padding: 2rem;
+      }
+      
+      .btn-block {
+        width: 100%;
+      }
+      
+      .input-group-text {
+        background-color: #fff;
+        border-right: 0;
+      }
+      
+      .form-control {
+        border-left: 0;
+      }
+      
+      .text-danger {
+        color: #ff0000 !important;
+      }
+      
+      .text-muted {
+        opacity: 0.6;
+      }
+      
+      @media (max-width: 768px) {
+        
+        h2 {
+          font-size: 24px;
+        }
+        
+        .card {
+          margin-left: 2rem;
+          margin-right: 2rem;
+        }
+        
+        .card-body {
+          padding: 1rem;
+        }
+        
+        .input-group-text img,
+        .btn-outline-danger img {
+          width: 20px;
+        }
+        
+        .form-control,
+        .btn-block,
+        .btn-outline-danger {
+          font-size: 14px;
+        }
+        
+        .text-muted {
+          font-size: 14px;
+        }
+      }
+  </style>
+  <title>Rechef Dev</title>
 </head>
 <body>
-  <div class="frame-8">
-    <div class="logo">Rechef Dev</div>
-  </div>
-  <div class="login">
-    <div class="login-page">
-      <div class="frame-35">
-        <div class="hey-welcome-back">
-          Hey,
-          <br />
-          Welcome
-          <br />
-          Back
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="text-center mt-5">
+          <div class="logo">Rechef Dev</div>
         </div>
-        <div class="frame-34">
-          <div class="frame-31">
-            <div class="frame-30">
-              <div class="frame-29">
-                <div class="frame-28">
-                  <div class="frame-26">
-                    <div class="group-82">
-                      <div class="rectangle-7"></div>
-                      <div class="frame-25">
-                        <img class="mail-02" src="mail-020.svg" />
-                        <input type="email" name="email" placeholder="Enter your Email">
-                      </div>
-                    </div>
-                    <div class="group-81">
-                      <div class="rectangle-8"></div>
-                      <img class="view" src="view0.svg" />
-                      <div class="frame-252">
-                        <img class="lock" src="lock0.svg" />
-                        <input type="password" name="password" placeholder="Enter your Password"/>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="forgot-password">Forgot Password?</div>
+        <div class="card mt-5">
+          <div class="card-body">
+            <h2 class="text-center text-danger mb-4">Hey, Welcome Back</h2>
+            <form id="loginForm">
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text"><img src="{%static 'media/login/mail-020.svg'%}" alt="mail-icon"></span>
+                  <input type="email" class="form-control" placeholder="Enter your Email">
                 </div>
-              
-                <div class="login-button-container">
-                  <a href="{% url 'home' %}"><button class="button login2">Login</button></a>
+              </div>
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text"><img src="{%static 'media/login/lock0.svg'%}" alt="lock-icon"></span>
+                  <input type="password" class="form-control" placeholder="Enter your Password">
                 </div>
-
               </div>
-              <p class="p2">or continue with</p>
-
-              <div class="google-button-container">
-                  <a href="">  
-                    <button class="button google" onclick="">
-                      <img class="vector" src="vector0.svg" />
-                      Google
-                    </button>
-                  </a>
+              <div class="mb-3 text-end">
+                <a href="#" class="text-danger">Forgot Password?</a>
               </div>
-
-            </div>
+             
+              <div class="d-grid mb-3">
+                <button type="button" class="btn btn-danger btn-block" onclick="redirectToHome()">Login</button>
+              </div>
+            
+              <p class="text-center text-muted mb-3">or continue with</p>
+              <div class="d-grid">
+                <button class="btn btn-outline-danger btn-block">
+                  <img src="{%static 'media/login/vector0.svg'%}" alt="google-icon" class="me-2"> Google
+                </button>
+              </div>
+              <div class="text-center mt-3">
+                <p class="text-muted">Don’t have an account? <a href="{%url 'signup'%}" class="text-danger">Sign up</a></p>
+              </div>
+            </form>
           </div>
-
-          <div class="frame-33">
-            <div class="don-t-have-an-account">Don’t have an account?</div>
-            <a href="../SignUp/index.html"><div class="sign-up">Sign up</div></a>
-          </div>
-
         </div>
       </div>
     </div>
   </div>
-</body>
-
-<script>
-  function detectDevice(){
-    if(window.innerWidth <= 768){
-      console.log("Mobile device detected");
-    }else{
-      console.log("Desktop/Laptop device detected");
+  <script src="../Splash/js/bootstrap.bundle.js"></script>
+  <script>
+    var homePtUrl = "{% url 'home-pt' %}";
+    var homeLpUrl = "{% url 'home-lp' %}";
+    function detectDevice(){
+      if(window.innerWidth <= 768){
+        console.log("Mobile device detected");
+        window.location.href = homePtUrl;
+      }else{
+        console.log("Desktop/Laptop device detected");
+        window.location.href = homeLpUrl;
+      }
     }
-  }
-
-  detectDevice();
-  window.addEventListener('resize', detectDevice);
-</script>
-
+  
+    function redirectToHome() {
+      detectDevice();
+    }
+  </script>
+</body>
 </html>
