@@ -1,0 +1,54 @@
+body {
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+  
+  .btn-danger {
+    background-color: #ff4545;
+    border: 2px solid #000000;
+    border-radius: 30px;
+  }
+
+  .btn-google {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 30px;
+  }
+  
+  .btn-outline-danger {
+    border-radius: 30px;
+    border-color: #ff0000;
+  }
+  
+  .input-group-text img {
+    opacity: 0.3;
+  }
+  
+  .text-muted {
+    color: #ff0000;
+    opacity: 0.6;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 24px;
+    }
+    
+    .form-label, .input-group-text img, .text-muted, .btn-google img, .btn-google, .btn-danger {
+      font-size: 14px;
+    }
+    
+    .btn-lg {
+      padding: 0.5rem 1rem;
+      font-size: 14px;
+    }
+    
+    .container {
+      padding: 0 1rem;
+    }
+  }
