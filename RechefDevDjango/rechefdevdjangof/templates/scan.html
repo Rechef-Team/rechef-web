@@ -5,158 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./vars.css">
+  <link rel="stylesheet" href="{%static 'scan/style.css'%}">
   <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}"> 
-  <style>
-    html, body {
-        overflow: hidden;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-
-    a{
-        text-decoration: none;
-      }
-
-      .homepage {
-        background: #ffffff;
-        height: 100vh;
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .rectangle-16 {
-        background: #fe4545;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-      
-      .group-29 {
-        margin-top: 20px;
-        z-index: 2;
-      }
-      
-      .rectangle-5 {
-        background: #ffffff;
-        border-radius: 16.5px;
-        padding: 0 15px;
-        display: flex;
-        align-items: center;
-        width: 310px;
-        height: 47px;
-        margin: 0 auto;
-      }
-      
-      .search-bar {
-        color: rgba(255, 96, 96, 0.5);
-        font-family: "Roboto-Medium", sans-serif;
-        font-size: 12px;
-        letter-spacing: 0.05em;
-        font-weight: 500;
-        flex-grow: 1;
-        border: none;
-        outline: none;
-        position: relative;
-      }
-      
-      .icon {
-        width: 18px;
-        height: 20.73px;
-      }
-      
-      .find-your-food {
-        color: #ffffff;
-        font-family: "Eczar-Regular", sans-serif;
-        font-size: 40px;
-        line-height: 48px;
-        letter-spacing: 0.06em;
-        font-weight: 400;
-        margin-top: 54px;
-        text-align: center;
-        z-index: 2;
-        position: relative;
-      }
-      
-      .group {
-        width: 8.84%;
-        height: 4.08%;
-        overflow: visible;
-      }
-      
-      .rectangle-8 {
-        background: #ffffff;
-        border-radius: 24px;
-        width: 152px;
-        height: 140px;
-        margin: 0 auto;
-      }
-      
-      .unsplash-tq-oe-gd-r-now-y {
-        width: 150px;
-        height: auto;
-        border-radius: 24px;
-        position: relative;
-        top: 80px;
-        z-index: 1;
-      }
-
-      .rectangle-8 p {
-        text-decoration: none;
-        font-size: 20px;
-        margin-top: 60%;
-        color: #333; /* Warna teks */
-        z-index: 2;
-      }
-
-      .navbar-container{
-        background: #ffffff;
-        width: 430px;
-        height: 82px;
-        position: absolute;
-        top: 83%;
-        left: 49.8%;
-        transform: translateX(-50%);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 55px 10px;
-        border-radius: 16px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .homeImage,
-      .scanImage,
-      .bookMarkImage{
-        width: 35px;
-        height: 35px;
-      }
-
-      .video {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 0;
-      }
-
-      .shutter {
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      #canvas{
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-  </style>
   <title>Rechef Dev</title>
 </head>
 <body>
@@ -174,9 +24,9 @@
     <img class="shutter" src="{% static 'media/scan/shutter0.svg' %}" alt="Shutter" id="shutter">
 
       <div class="navbar-container">
-        <a href="{%url 'home-pt'%}"><img src="{%static 'media/home/home1.svg'%}" class="homeImage"></a>
-        <a href="{%url 'scan'%}"><img src="{%static 'media/home/scan0.svg'%}" class="scanImage"></a>
-        <a href="#"><img src="{%static 'media/home/reccipe0.svg'%}" class="bookMarkImage"></a>
+        <a href="{%url 'home-pt'%}"><img src="{%static 'media/scan/home0.svg'%}" class="homeImage"></a>
+        <a href="{%url 'scan'%}"><img src="{%static 'media/scan/scan1.svg'%}" class="scanImage"></a>
+        <a href="#"><img src="{%static 'media/scan/reccipe0.svg'%}" class="bookMarkImage"></a>
       </div>
       
     </div>
