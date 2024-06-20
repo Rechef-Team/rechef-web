@@ -11,8 +11,17 @@ def splash(request):
 def login(request):
     return render(request, 'login.html')
 
-def home(request):
-    return render(request, 'home.html')
+def signup(request):
+    return render(request, 'signup.html')
+
+def home_pt(request):
+    return render(request, 'home-pt.html')
+
+def home_lp(request):
+    return render(request, 'home-lp.html')
 
 def fooddetails(request):
-    return render(request, 'fooddetails.html')
+    return render(request, 'food-details.html')
+
+def scan(request):
+    return render(request, 'scan.html')
