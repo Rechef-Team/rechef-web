@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+  <link rel="stylesheet" href="./vars.css">
+  <!-- <link rel="stylesheet" href="./style.css"> -->
+  <style>
+    body {
+        background-color: #ffffff;
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      h1 {
+        font-size: 32px;
+        font-weight: 600;
+      }
+      
+      .btn-danger {
+        background-color: #ff4545;
+        border: 2px solid #000000;
+        border-radius: 30px;
+      }
+
+      .btn-google {
+        background-color: #ffffff;
+        border: 2px solid #000000;
+        border-radius: 30px;
+      }
+      
+      .btn-outline-danger {
+        border-radius: 30px;
+        border-color: #ff0000;
+      }
+      
+      .input-group-text img {
+        opacity: 0.3;
+      }
+      
+      .text-muted {
+        color: #ff0000;
+        opacity: 0.6;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 24px;
+        }
+        
+        .form-label, .input-group-text img, .text-muted, .btn-google img, .btn-google, .btn-danger {
+          font-size: 14px;
+        }
+        
+        .btn-lg {
+          padding: 0.5rem 1rem;
+          font-size: 14px;
+        }
+        
+        .container {
+          padding: 0 1rem;
+        }
+      }
+  </style>
+  <title>Rechef Dev</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <br><br>
+        <h1 class="text-center text-danger">Let's get started</h1>
+        <br>
+        <form>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <img src="{%static 'media/signup/smart-phone-010.svg'%}" alt="phone icon" class="img-fluid">
+              </span>
+              <input type="text" class="form-control" id="username" placeholder="Enter your Username">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <img src="{%static 'media/signup/lock0.svg'%}" alt="lock icon" class="img-fluid">
+              </span>
+              <input type="email" class="form-control" id="email" placeholder="Enter your Email">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <img src="{%static 'media/signup/lock1.svg'%}" alt="lock icon" class="img-fluid">
+              </span>
+              <input type="password" class="form-control" id="password" placeholder="Enter your Password">
+            </div>
+          </div>
+          <br><br>
+
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-danger btn-lg mx-5" onclick="redirectToHome()">Sign Up</button>
+          </div>
+
+
+        </form>
+        <div class="d-grid gap-2 text-center mt-3">
+          <p class="text-muted">or continue with</p>
+          <button class="btn btn-google btn-lg mx-5">
+            <img src="{%static 'media/signup/vector0.svg'%}" alt="Google icon" class="me-2"> Google
+          </button>
+        </div>
+        <div class="text-center mt-3">
+          <p class="text-muted">Already have an account!</p>
+          <a href="{%url 'login'%}" class="text-danger fw-bold">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
+</body>
+<script>
+  function detectDevice(){
+    if(window.innerWidth <= 768){
+      console.log("Mobile device detected");
+      window.location.href = "{%url 'home-pt'%}";
+    }else{
+      console.log("Desktop/Laptop device detected");
+      window.location.href = "{%url 'home-lp'%}";
+    }
+  }
+
+  function redirectToHome() {
+    detectDevice();
+  }
+</script>
+</html>
