@@ -5,62 +5,55 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{%static 'splash/vars.css' %}">
-  <link rel="stylesheet" href="{%static 'splash/style.css' %}">
-  <style>
-    a,
-    button,
-    input,
-    select,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      border: none;
-      text-decoration: none;
-      background: none;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    menu, ol, ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
-  <title>Document</title>
+  <link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{%static 'css/style.css' %}">
+  <link rel="stylesheet" href="{%static 'splash/style.css'%}">
+  <title>Rechef Dev</title>
 </head>
 <body onload="realtimeClock()">
-  <div class="splash">
-    <div class="startup-screen">
-      <div class="buttons-container">
-        <a href="../SignUp/index.html"><button class="button sign-up">Sign-Up</button></a>
-        <a href="{% url 'login' %}"><button class="button login">Login</button></a>
+  <div class="container-fluid vh-100 d-flex flex-column justify-content-center align-items-center splash">
+    <div class="d-flex flex-column justify-content-center align-items-center startup-screen">
+      <div class="text-center frame-11">
+        <h1 class="text-danger">Welcome to ReChef!</h1>
+        <p class="text-danger opacity-75">Where Inspiration Meets Ingredients!</p>
       </div>
+      <div class="frame-8 text-danger mt-5">
+        <h2>Rechef Dev</h2>
       </div>
-      <div class="frame-11">
-        <div class="welcome-to-re-chef">Welcome to ReChef!</div>
-        <div class="where-inspiration-meets-ingredients">
-          Where Inspiration Meets Ingredients!
+      <div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{%static 'media/splash/_6620564-50.png' %}" class="d-block w-100 carousel-image" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{%static 'media/splash/_6620564-20.png' %}" class="d-block w-100 carousel-image" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{%static 'media/splash/_6620564-51.png' %}" class="d-block w-100 carousel-image" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{%static 'media/splash/_6620564-30.png' %}" class="d-block w-100 carousel-image" alt="...">
+          </div>
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
       </div>
-      <div class="frame-8">
-        <div class="logo">Rechef Dev</div>
+      <br><br>
+      <div class="mb-4">
+        <a href="{%url 'signup'%}" class="btn btn-outline-dark btn-lg">Sign-Up</a>
+        <a href="{%url 'login'%}" class="btn btn-danger btn-lg ms-3">Login</a>
       </div>
-      <div class="carousel">
-        <div class="rectangle-15"></div>
-        <img class="_6620564-5" src="{%static 'media/splash/_6620564-50.png' %}" />
-        <img class="_6620564-2" src="{{ MEDIA_URL }}_6620564-20.png" />
-        <img class="_6620564-52" src="{{ MEDIA_URL }}_6620564-51.png" />
-        <img class="_6620564-3" src="{{ MEDIA_URL }}_6620564-30.png" />
     </div>
   </div>
+  <script src="{%static 'js/bootstrap.bundle.min.js' %}"></script>
   <script>
+    /*
     function realtimeClock() {
       var rtClock = new Date();
       var hours = rtClock.getHours();
@@ -76,7 +69,7 @@
 
       document.getElementById('clock').innerHTML = hours + " : " + minutes + " : " + seconds + " " + amPm;
       var t = setTimeout(realtimeClock, 500);
-    }
+    }*/
   </script>
 </body>
 </html>
